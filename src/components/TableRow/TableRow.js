@@ -1,7 +1,6 @@
 import React from "react";
 import styles from "./TableRow.module.css";
 export default function TableRow({ tr }) {
-  console.log(tr);
   const date = tr.timestamp.slice(4, 21);
   return (
     <>

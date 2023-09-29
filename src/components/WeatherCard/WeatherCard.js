@@ -1,7 +1,6 @@
 import React from "react";
 import styles from "./WeatherCard.module.css";
 export default function WeatherCard({ item }) {
-  console.log(item);
 
   const date = item.timestamp.slice(4, 21);
   return (
