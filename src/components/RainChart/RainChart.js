@@ -32,26 +32,42 @@ export const options = {
     },
     title: {
       display: true,
-      text: "Chart.js Line Chart",
+      text: "Opady deszczu w tym tygodniu",
     },
   },
 };
 
-const labels = ["January", "February", "March", "April", "May", "June", "July"];
+export function RainChart({ weathers }) {
+  const datas = weathers.map((item) => ({
+    date: item.timestamp.slice(4, 15),
+    humidity: item.humidity
+  }));
 
-export const data = {
-  labels,
-  datasets: [
-    {
-      fill: true,
-      label: "Opady deszczu",
-      data: labels.map(() => faker.datatype.number({ min: 0, max: 1000 })),
-      borderColor: "rgb(53, 162, 235)",
-      backgroundColor: "rgba(53, 162, 235, 0.5)",
-    },
-  ],
-};
+  const labelsSet = [...new Set(datas.map((x) => x.date))];
+  const labels = labelsSet.slice(labelsSet.length - 7, labelsSet.length);
+  const chartWeathers = [];
 
-export function RainChart() {
+  labels.forEach((label) => {
+    const pairedObj = datas.find((data) => data.date === label);
+    if (pairedObj) {
+      chartWeathers.push(pairedObj);
+    }
+  });
+
+  const data = {
+    labels,
+    datasets: [
+      {
+        fill: true,
+        label: "Opady deszczu",
+        data: chartWeathers.slice(chartWeathers.length - 7,chartWeathers.length).map((item) => item.humidity),
+        borderColor: "rgb(53, 162, 235)",
+        backgroundColor: "rgba(53, 162, 235, 0.5)",
+      },
+      
+    ],
+    
+  };
+
   return <Line options={options} data={data} />;
 }

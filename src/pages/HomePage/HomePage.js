@@ -24,15 +24,16 @@ export default function HomePage() {
       <Header />
       <h1>Dane pogodowe</h1>
 
-      <div>
+      <div className={styles.charts}>
         <VerticalBarChart weathers={weathers}/>
+        <RainChart  weathers={weathers}/>
       </div>
 
       <div>
         {weathers.map((weather) => (
           <WeatherCard item={weather} />
         ))}
-        <RainChart />
+      
         <table className={styles.table}>
           <tr>
             <th>Data: </th>

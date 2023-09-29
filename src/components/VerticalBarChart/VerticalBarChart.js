@@ -43,7 +43,9 @@ export function VerticalBarChart({weathers}) {
         max_temp: item.max_temp
     }))
 
-    const labels = [...new Set(datas.map(x => x.date))]
+    const labelsSet = [...new Set(datas.map(x => x.date))]
+    // TODO zmiana ilości wyników
+    const labels = labelsSet.slice(labelsSet.length - 7,labelsSet.length)
     const chartWeathers = []
     
     labels.forEach((label) => {
@@ -52,19 +54,19 @@ export function VerticalBarChart({weathers}) {
             chartWeathers.push(pairedObj)
         }
     })
-    console.log(chartWeathers)
 
     const data = {
       labels,
       datasets: [
         {
           label: 'Minimalna',
-          data: chartWeathers.map((item) => item.min_temp),
+        //   TODO zmiana ilości wyników
+          data: chartWeathers.slice(chartWeathers.length - 7,chartWeathers.length).map((item) => item.min_temp),
           backgroundColor: 'rgba(255, 99, 132, 0.5)',
         },
         {
           label: 'Maksymalna',
-          data: chartWeathers.map((item) => item.max_temp),
+          data: chartWeathers.slice(chartWeathers.length - 7,chartWeathers.length).map((item) => item.max_temp),
           backgroundColor: 'rgba(53, 162, 235, 0.5)',
         },
       ],
