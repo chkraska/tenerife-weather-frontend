@@ -3,6 +3,7 @@ import Header from "../../components/Header/Header";
 import WeatherCard from "../../components/WeatherCard/WeatherCard";
 import styles from "../HomePage/HomePage.module.css";
 import TableRow from "../../components/TableRow/TableRow";
+import { RainChart } from "../../components/RainChart/RainChart";
 
 export default function HomePage() {
   const [weathers, setWeathers] = useState([]);
@@ -27,6 +28,7 @@ export default function HomePage() {
         {weathers.map((weather) => (
           <WeatherCard item={weather} />
         ))}
+        <RainChart />
         <table className={styles.table}>
           <tr>
             <th>Data: </th>
