@@ -7,6 +7,7 @@
 .charts {
     width: 70%;
     margin: 30px auto;
+    position: absolute;
 }
 
 @media (max-width:768px) {

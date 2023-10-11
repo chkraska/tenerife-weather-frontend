@@ -75,3 +75,4 @@ export function VerticalBarChart({ weathers }) {
 
   return <Bar options={options} data={data} />;
 }
+
