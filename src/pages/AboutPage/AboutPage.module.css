@@ -1,1 +1,34 @@
-/* do dodania ładny wygląd!*/
+
+.AboutPage{
+    font-family: 'Raleway', sans-serif;
+}
+
+.container{
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    background: rgb(101,97,134);
+    background: radial-gradient(circle, rgba(101,97,134,1) 0%, rgba(99,182,227,1) 100%);
+    border: 1px white solid;
+    height: 100%;
+    width: 50%;
+    margin: 100px auto auto auto;
+
+}
+.box{
+   color: ghostwhite; 
+}
+.box, h3{
+    font-size: 40px;
+    text-align: center;
+    text-shadow: 2px 2px 5px cadetblue;
+}
+.box ,p{
+    
+    font-weight: 200;
+    font-size: 18px;
+    text-align: center;
+    margin: 10px 0px 10px 0px;
+}
+
+

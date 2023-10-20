@@ -1,4 +1,5 @@
 .container{
+    visibility: hidden;
     background-color: beige;
     padding: 10px;
     margin: 10px;

@@ -22,18 +22,18 @@ export default function HomePage() {
   return (
     <div>
       <Header />
-      <h1>Dane pogodowe</h1>
+      <h1 className={styles.title}>Dane pogodowe Teneryfy</h1>
 
       <div className={styles.charts}>
-        <VerticalBarChart weathers={weathers}/>
-        <RainChart  weathers={weathers}/>
+        <VerticalBarChart weathers={weathers} />
+        <RainChart weathers={weathers} />
       </div>
 
       <div>
         {weathers.map((weather) => (
           <WeatherCard item={weather} />
         ))}
-      
+
         <table className={styles.table}>
           <tr>
             <th>Data: </th>

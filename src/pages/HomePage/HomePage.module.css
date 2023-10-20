@@ -1,15 +1,25 @@
 .table, th, td{
+    display: none;
+    visibility: hidden;
     border: 1px solid black;
     padding: 20px;
     border-collapse: collapse;
 }
 
 .charts {
-    width: 70%;
-    margin: 30px auto;
-    position: absolute;
+    display: block;
+    height: 100%;
+    width: 50%;
+    margin: auto auto auto auto;
+    position: relative;
+    background-color: aliceblue;
+    
 }
-
+.title{
+    text-align: center;
+    color: ghostwhite;
+    text-shadow: 2px 2px 5px cadetblue;
+}
 @media (max-width:768px) {
     .charts {
         width: 95%;
